@@ -13,7 +13,10 @@
     >
     <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
     <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
-    <clr-wizard-button [type]="'finish'" (click)="handleClose()"
+    <clr-wizard-button
+      (click)="handleFinish()"
+      [type]="'finish'"
+      (click)="handleClose()"
       >Finish</clr-wizard-button
     >
     <clr-wizard-page>
@@ -49,6 +52,7 @@
             placeholder="IPhone X..."
             formControlName="name"
           />
+          <clr-control-error>This Field is Required!</clr-control-error>
         </clr-input-container>
         <!-- Toggle Switch for active -->
         <div class="toggle-switch">
@@ -87,9 +91,8 @@
     <clr-wizard-page>
       <ng-template clrPageTitle>Expiration Info</ng-template>
       <clr-input-container formGroupName="expiration">
-        <input type="date" clrInput clrDate
-         formControlName="expirationDate">
-    </clr-input-container>
+        <input type="date" clrInput clrDate formControlName="expirationDate" />
+      </clr-input-container>
     </clr-wizard-page>
   </clr-wizard>
 </form>
